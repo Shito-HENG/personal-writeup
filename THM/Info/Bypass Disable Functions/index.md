@@ -1,3 +1,8 @@
+---
+layout: default
+title: Bypass Disable Functions Writeup
+---
+
 # Bypass Disable Functions
 
 **Difficulty:** Info  
