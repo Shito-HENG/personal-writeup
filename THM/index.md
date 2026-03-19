@@ -4,8 +4,6 @@ title: TryHackMe Writeups
 
 # 🎯 TryHackMe Writeups
 
-[Home](../) | [TryHackMe](./) | [Hack The Box](../HTB/)
-
 ## Info
 
 | Machine | Category | Difficulty | Date | Writeup |

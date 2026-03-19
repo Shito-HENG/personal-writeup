@@ -3,13 +3,11 @@
 Welcome to my collection of **TryHackMe** and **Hack The Box** writeups.  
 Each one documents my approach, tools used, and lessons learned from different machines and challenges.  
 
-**Navigation:** [Home](./) | [TryHackMe](THM/) | [Hack The Box](HTB/)
-
 ## 🎯 Try Hack Me Writeups
 
 | Machine | Category | Difficulty | Writeup |
 |----------|-----------|-------------|----------|
-| Bypass Disable Functions | Web | Info | [Read Me](THM/Info/Bypass%20Disable%20Functions/) |
+| Bypass Disable Functions | Web | Info | [Read](THM/Info/Bypass%20Disable%20Functions/) |
 
 Browse all THM entries: [THM Writeups](THM/)
 
