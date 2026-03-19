@@ -8,7 +8,7 @@ Each one documents my approach, tools used, and lessons learned from different m
 
 | Machine | Category | Difficulty | Writeup |
 |----------|-----------|-------------|----------|
-| Bypass Disable Functions | Web | Info | <a href="THM\Info\Bypass Disable Functions\index.md">Read Me</a> |
+| Bypass Disable Functions | Web | Info | <a href="THM/Info/Bypass%20Disable%20Functions/">Read Me</a> |
 
 ## 🤖 Hack The Box Writeups
 
