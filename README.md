@@ -17,4 +17,4 @@ Each one documents my approach, tools used, and lessons learned from different m
 
 ## 📃 Notes
 These writeups are for **educational purposes only**.  
-All HTB writeups are for **retired machines** and no active flags or sensitive information are disclosed.
+All HTB writeups are for **retired machines** and no active flags or sensitive information are disclosed.Site Updated 2026
