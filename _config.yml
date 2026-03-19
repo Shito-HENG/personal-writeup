@@ -1,0 +1,14 @@
+title: Personal Writeups
+
+# Apply default front matter values to all writeup pages.
+defaults:
+  - scope:
+      path: "THM"
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: "HTB"
+      type: "pages"
+    values:
+      layout: "default"
