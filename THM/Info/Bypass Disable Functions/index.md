@@ -36,58 +36,7 @@ This writeup details my successful completion of TryHackMe **Bypass Disable Fuct
 - Execute reverse shell to gain access to the server
 - Locate the file 'flag.txt'
 
-### 2. Reconnaissance / Information Gathering
-
-**Tool:** Whois  
-**Usage:** For getting domain / IP registration and ownership metadata (registrar, org, CIDR/NetRange, nameservers, contact info).  
-**Command:**
-```bash
-whois 10.201.16.212
-```
-**Result**
-```text
-NetRange:       10.0.0.0 - 10.255.255.255
-CIDR:           10.0.0.0/8
-NetName:        PRIVATE-ADDRESS-ABLK-RFC1918-IANA-RESERVED
-NetHandle:      NET-10-0-0-0-1
-Parent:          ()
-NetType:        IANA Special Use
-Organization:   Internet Assigned Numbers Authority (IANA)
-
-... (excerpt truncated)
-```
-
-**Tool:** Dig  
-**Usage:** DNS lookup tool — query A/AAAA/MX/TXT/SOA records, confirm resolution, test DNS servers.  
-**Command:**
-```bash
-dig 10.201.16.212
-```
-**Result:**
-```text
-; <<>> DiG 9.20.11-4+b1-Debian <<>> 10.201.16.212
-;; global options: +cmd
-;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 9211
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
-
-;; OPT PSEUDOSECTION:
-; EDNS: version: 0, flags:; MBZ: 0x0005, udp: 4096
-;; QUESTION SECTION:
-;10.201.16.212.                 IN      A
-
-;; ANSWER SECTION:
-10.201.16.212.          5       IN      A       10.201.16.212
-
-;; Query time: 120 msec
-;; SERVER: <REDACTED> (UDP)
-;; WHEN: Tue Oct 07 07:22:07 CDT 2025
-;; MSG SIZE  rcvd: 58
-```
-However, these information isn't useful for exploiting this room  
-**Note:** Passive DNS/registration lookups (```dig```,```whois```) were performed against the lab host only. Outputs were used locally and redacted for privacy before publishing. No scanning or external targeting was performed outside the TryHackMe lab.
-
-### 3. Scanning
+### 2. Scanning
 
 **Tool:** Nmap  
 **Usage:** Active network scanner — discover hosts, open ports, services, versions, run NSE scripts for common checks.  
@@ -124,6 +73,10 @@ gobuster dir -u http://10.201.16.212 -w /usr/share/seclists/Discovery/Web-Conten
 ```
 **Result**
 ```
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
 [+] Url:                     http://10.201.16.212
 [+] Method:                  GET
 [+] Threads:                 100
@@ -142,7 +95,7 @@ Starting gobuster in directory enumeration mode
 ```
 From this output, we see that /assets and /uploads directory are accessable within web server.
 
-### 4. Vulnerability Analysis
+### 3. Vulnerability Analysis
 
 Next, we open the web server to see if there're any path that we could exploit.
 
@@ -158,7 +111,7 @@ As we see here, it shows the submission for file in cv.php
 
 <img src="phpinfo.png" width="800" height="auto">
 
-### 5. Exploitation
+### 4. Exploitation
 
 In this room, we are recommend to use **Chankro** to exploit the web server
 **Usage:** Tool to evade disable_functions and open_basedir  
@@ -201,14 +154,25 @@ After that, we could use **burpsuite** to capture the file upload and change fil
 
 <img src="shell.png" width="800" height="auto">
 
-### 6. Post-Exploitation
+### 5. Post-Exploitation
 
 <img src="flag.png" width="800" height="auto">
 
 ## III. Challenges Faced
 
+The challenge that I faced during this room is understanding how chankro.py works.
+
+
 ## IV. Lesson Learned
+
+In this room, I have learned about:
+- How the exploitation work for submission using chankro.py
+- How dangerous it is if the attacker could change the filetype of the file for submitting to web server
 
 ## V. Remediation
 
+For the remediation, we should apply the restrict function that only correct filetypes are allowed to submit; so that, attacker couldn't change the filetype and submit the payload instead.
+
 ## VI. References
+
+https://tryhackme.com/room/bypassdisablefunctions
