@@ -12,7 +12,9 @@ title: TryHackMe Writeups
 
 ## Easy
 
-_No writeups yet._
+| Machine | Category | Difficulty | Date | Writeup |
+|----------|-----------|-------------|------|----------|
+| MD2PDF | Web | Easy | 2025-10-07 | [Read](Easy/MD2PDF) |
 
 ## Medium
 
