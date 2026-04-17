@@ -114,14 +114,6 @@ In this room, we are recommend to use **Chankro** to exploit the web server
 
 <img src="flag.png" width=800 height="auto">
 
-<img src="burp2.png" width="800" height="auto">
-
-<img src="ok.png" width="800" height="auto">
-
-<img src="uploads.png" width="800" height="auto">
-
-<img src="shell.png" width="800" height="auto">
-
 ## III. Challenges Faced
 
 ## IV. Lesson Learned
